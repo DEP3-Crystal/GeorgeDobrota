@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+}
+
+body {
+    background: url('https://raw.githubusercontent.com/WebToLearn/personal-page-css-workshop/master/img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+h1 {text-align: center;}
+h3 {text-align: center;}
+p {text-align: center;}
+h2 {text-align: center;}
+h4{text-align: center;}
+
+.car{
+    text-align: left;
+    width:400px;
+    height: 300px;
+}
+
+.pc{
+    text-align: center;
+}
+
+.ball{
+    text-align: right;
+}
+
+.profile{
+    text-align: center;
+}
+
+.contact-address{
+    text-align: center;
+    color: blue;
+}
+
+.container {
+    background: white;
+    width: 990px;
+    margin: 0 auto 30px auto;
+    padding: 30px 20px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0px 6px #c0392b;
+    border-radius: 0px 0px 4px 4px;
+    display: flex;
+  }
+
+  .skillsul{
+    background-color: rgb(255,255,255);
+    text-align: center;
+  }
+
+  .skills{
+    text-align: center;
+    
+
+  }
+
+  .body-cv{
+    background-color: #f4e3d0;
+  }
+
+  .body-about{
+    background-color: #f4e3d0;
+  }
+
+  progress[value] {
+    width: 250px;
+    height: 20px;
+
+    }
+    
+    
