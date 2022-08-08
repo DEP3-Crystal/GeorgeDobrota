@@ -1,8 +1,10 @@
+package main;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class VendingMachine {
-    static int[] Change(double sum, double price){
+     public static int[] Change(double sum, double price){
 
         int[] money={1, 5, 10, 25, 50, 100};
         int[] rest=new int[6];
