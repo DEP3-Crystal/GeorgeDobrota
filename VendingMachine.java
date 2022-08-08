@@ -4,13 +4,13 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class VendingMachine {
-     public static int[] Change(double sum, double price){
+    public static int[] money={1, 5, 10, 25, 50, 100};
+     public static int[] rest=new int[6];
+     public static int[] computeChange(double sum, double price){
 
-        int[] money={1, 5, 10, 25, 50, 100};
-        int[] rest=new int[6];
-        int i;
+
         int change= (int) ((sum-price)*100);
-        for( i=5; i>=0;i--)
+        for( int i=5; i>=0;i--)
         {
             rest[i]=change/money[i];
             change=change%money[i];
@@ -25,7 +25,9 @@ public class VendingMachine {
         System.out.print("Introduce price: ");
         double price = in.nextDouble();
         in.close();
-        System.out.println("Your change is: " + Arrays.toString(Change(sum, price)));
+        if(sum<price)
+            System.out.println("You don't have money!");
+            else System.out.println("Your change is: " + Arrays.toString(computeChange(sum, price)));
     }
 
 }
