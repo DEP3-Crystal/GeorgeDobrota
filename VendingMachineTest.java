@@ -1,4 +1,4 @@
-package main;
+package test;
 
 import static main.VendingMachine.Change;
 
