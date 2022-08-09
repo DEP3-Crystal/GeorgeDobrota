@@ -66,7 +66,10 @@ public class randomPerson {
                 removePerson();
                 break;
             }
-
+            else if (option>4)
+            {System.out.println("You don't select anything, please try again ");
+            System.out.println("Intoduce your option:");
+            option = scan.nextInt();}
         } while (option != 0);
 
 
@@ -74,6 +77,11 @@ public class randomPerson {
 
     static void showNames() {
         names.forEach(System.out::println);
+        System.out.println(names);
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        menu();
     }
 
     public static void randomPerson() {
@@ -81,6 +89,11 @@ public class randomPerson {
         int randomNumber;
         randomNumber = random.nextInt(names.size());
         System.out.println(names.get(randomNumber));
+        System.out.println(names);
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        menu();
     }
 
     public static void addPerson() {
@@ -91,6 +104,11 @@ public class randomPerson {
         String person = scan.nextLine();
         names.add(person);
         System.out.println(names);
+        System.out.println(names);
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        menu();
     }
 
     public static void removePerson() {
@@ -101,6 +119,10 @@ public class randomPerson {
         String person = scan.nextLine();
         names.removeIf(v->v.equals(person));
         System.out.println(names);
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        menu();
     }
 }
 
