@@ -1,0 +1,212 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+}
+
+body {
+    background: url('https://raw.githubusercontent.com/WebToLearn/personal-page-css-workshop/master/img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+
+h1 {text-align: center;}
+h3 {text-align: center;}
+p {text-align: center;}
+h2 {text-align: center;}
+h4{text-align: center;}
+
+.container {
+    background: white;
+    width: 990px;
+    margin: 0 auto 30px auto;
+    padding: 30px 20px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0px 6px #c0392b;
+    border-radius: 0px 0px 4px 4px;
+    display: flex;
+    text-align: center;
+  
+}
+
+
+.menu {
+  width: 990px;
+  margin: 80px auto 0 auto;
+  text-align: center;
+}
+
+.menu--light {
+  margin: 30px auto 0 auto;
+}
+
+.menu-item {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 20px;
+  padding: 10px 40px 10px 40px;
+  background: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  outline: none;
+  color: #888;
+  vertical-align: bottom;
+}
+
+.menu-item-active {
+  position: relative;
+  bottom: -1px;
+  color: #c0392b;
+  padding: 15px 40px 15px 40px;
+  margin-top: 0;
+}
+
+:root {
+  --gap-grid: 20px;
+  --color-gray: #ebebeb;
+  --color-orange: rgb(247, 54, 20);
+}
+
+.grid .title {
+  text-align: start;
+}
+
+.grid .subtitle {
+  text-align: start;
+  margin: 10px 0 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2.6fr 2fr;
+  gap: var(--gap-grid);
+}
+
+aside>ul {
+  border-left: solid var(--color-gray) 1px;
+  height: fit-content;
+  list-style: none;
+  padding-left: 10px;
+}
+
+aside li {
+  padding: 13px;
+  border-bottom: 1px solid var(--color-gray);
+
+}
+
+ul a {
+  text-decoration: none;
+  color: var(--color-orange)
+}
+
+.grid address {
+  grid-column: 1 / 4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-grid);
+}
+
+address>div {
+  border: solid 1px var(--color-gray);
+  border-radius: 4px;
+  padding: 5px 8px;
+  gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr 14fr;
+  align-items: center;
+  /* justify-items: center; */
+  font-style: normal;
+}
+
+.link>a {
+  color: var(--color-orange);
+  text-decoration: none;
+}
+
+address * {
+  line-height: 1em;
+  margin: 0;
+}
+
+.link-description {
+  font-size: .8em;
+}
+
+.icone {
+  font-size: 40px;
+}
+@media (max-width: 990px) {
+  .menu {
+    width: 100%;
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-grid {
+    display: block;
+}
+.menu-item {
+  margin: 0;
+  border: 1px solid #acabab;
+  border-bottom: 0;
+}
+
+.menu-item:last-child {
+  border: 1px solid #b1b0b0;
+}
+
+
+.menu-item-active {
+  bottom: 0;
+  padding: 10px 40px 10px 40px;
+}
+}
+
+@media (max-width: 768px) {
+  body {
+    background: none #ccc;
+}
+.menu {
+  margin-top: 10px;
+}
+aside {
+  display: none;
+}
+
+.grid {
+  grid-template-columns: 1fr 3fr;
+}
+.grid:first-child{
+  grid-area: 2/1;
+}
+.info{
+  grid-area: 1/2;
+}
+
+
+.grid address {
+  grid-template-columns: 1fr;
+}
+
+.address {
+  grid-template-columns: 1.7fr 3fr;
+
+}
+
+.icone{
+ text-align: end;
+}
+}
+
