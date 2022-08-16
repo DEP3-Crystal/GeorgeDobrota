@@ -1,8 +1,8 @@
 import java.util.*;
 
-public class randomPerson {
+public class RandomPerson {
     //all names
-    static ArrayList<String> names = new ArrayList<String>(
+    static List<String> names = new ArrayList<>(
             Arrays.asList("isuf.muca@crystal-system.eu",
                     "\n danjel.halili@crystal-system.eu",
                     "\n flavio.lorenci@crystal-system.eu",
@@ -28,9 +28,19 @@ public class randomPerson {
 
 
     public static void main(String[] args) {
+
         menu();
     }
 
+    //My program starts with a menu that asks you to choose what you would like to do:
+    //-show all names
+    //-choose a random person
+    //-add a new person
+    //-remove a person
+    //-quit program
+
+
+    //The first step is choose an option from the above.
     public static void menu() {
         Scanner scan = new Scanner(System.in);
         int option;
@@ -64,17 +74,19 @@ public class randomPerson {
             } else if (option == 4) {
                 removePerson();
                 break;
+            } else if (option > 4) {
+                System.out.println("You don't select anything, please try again ");
+                System.out.println("Intoduce your option:");
+                option = scan.nextInt();
             }
-            else if (option>4)
-            {System.out.println("You don't select anything, please try again ");
-            System.out.println("Intoduce your option:");
-            option = scan.nextInt();}
         } while (option != 0);
 
 
+        // The second step is if you choose to show all names, the program must show all names from the list
+
     }
 
-    static void showNames() {
+    public static void showNames() {
         System.out.println(names);
         System.out.println();
         System.out.println();
@@ -82,8 +94,10 @@ public class randomPerson {
         menu();
     }
 
+    //The third step is  if you choose a random person, the program must randomly choose a person from the list .
+    // If you resume this random pick, the previously chosen person should no longer be chosen because was deleted from list.
     public static void randomPerson() {
-        Random random=new Random();
+        Random random = new Random();
         int randomNumber;
         randomNumber = random.nextInt(names.size());
         System.out.println(names.get(randomNumber));
@@ -94,6 +108,8 @@ public class randomPerson {
         menu();
     }
 
+    //The next step is if you choose to add new person, you should introduce a name and the program adds the name to the end of the list
+    //still working on this one
     public static void addPerson() {
         Scanner scan = new Scanner(System.in);
 
@@ -107,13 +123,14 @@ public class randomPerson {
         menu();
     }
 
+    //The final step is if you choose to remove a person, the program checks if there is a name in the list and if there is, it will delete the person
     public static void removePerson() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Select one person to remove it:");
         System.out.println(names);
         System.out.println("The name should be 'user@domain.com'");
         String person = scan.nextLine();
-        names.removeIf(v->v.equals(person));
+        names.removeIf(v -> v.equals(person));
         System.out.println(names);
         System.out.println();
         System.out.println();
