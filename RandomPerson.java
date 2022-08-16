@@ -75,8 +75,7 @@ public class RandomPerson {
                 removePerson();
                 break;
             } else if (option > 4) {
-                System.out.println("You don't select anything, please try again ");
-                System.out.println("Intoduce your option:");
+                System.err.println("You introduce an invalid option, please try again. ");
                 option = scan.nextInt();
             }
         } while (option != 0);
