@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesseract</title>
+</head>
+<body>
+    <div class="rectangle-left-right"></div>
+<div class="square-externel"></div>
+<div class="square-internel"></div>
+<div class="circle"></div>
+<style>
+  * {
+    margin: 0;
+  }
+  body {
+    background: #222730;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body *  {
+    position: absolute;
+  }
+  .rectangle-left-right{
+    width: 400px;
+    height: 150px;
+    background: #4CAAB3;
+    margin-top: 0px;
+  }
+  .square-externel {
+    width: 250px;
+    height: 250px;
+    background: #222730;
+    transform: rotate(45deg);
+  }
+  .square-internel {
+    width: 150px;
+    height: 150px;
+    background: #4CAAB3;
+    transform: rotate(45deg);
+  }
+  .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #393E46;
+  }
+</style>
+</body>
+</html>
