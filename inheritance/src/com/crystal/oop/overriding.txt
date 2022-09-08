@@ -1,0 +1,34 @@
+OVERRINDING refers to the ability of a subclass to re-implement an instance method inherited from a superclass.
+RULES:
+-Only inherited methods can be overridden:
+        Because overriding happens when a subclass re-implements a method inherited from a superclass, so only inherited methods can be overridden, that’s straightforward.
+        That means only methods declared with the following access modifiers: public, protected and default (in the same package) can be overridden.
+        That also means private methods cannot be overridden.
+-Final and static methods cannot be overridden:
+        A final method means that it cannot be re-implemented by a subclass, thus it cannot be overridden
+
+-The overriding method must have same argument list:
+-The overriding method must have same return type (or subtype):
+-The overriding method must not have more restrictive access modifier:
+        This rule can be understood as follows:
+            If the overridden method is has default access, then the overriding one must be default, protected or public.
+            If the overridden method is protected, then the overriding one must be protected or public.
+            If the overridden method is public, then the overriding one must be only public.
+
+-The overriding method must not throw new or broader checked exceptions:
+        In other words, the overriding method may throw fewer or narrower checked exceptions, or any unchecked exceptions.
+
+-Use the super keyword to invoke the overridden method from a subclass:
+        It’s very common that a subclass extends a superclass’ behavior rather than re-implementing the behavior from scratch. 
+
+-Constructors cannot be overridden:
+        Because constructors are not methods and a subclass’ constructor cannot have same name as a superclass’ one, so there’s nothing relates between constructors and overriding.
+
+-Abstract methods must be overridden by the first concrete (non-abstract) subclass:
+-A static method in a subclass may hide another static one in a superclass, and that’s called hiding
+-The synchronized modifier has no effect on the rules of overriding:
+        The synchronized modifier relates to the acquiring and releasing of a monitor object in multi-threaded context, therefore it has totally no effect on the rules of overriding. 
+        That means a synchronized method can override a non-synchronized one and vice versa.
+
+-The strictfp modifier has no effect on the rules of overriding:
+        That means the presence or absence of the strictfp modifier has absolutely no effect on the rules of overriding: it’s possible that a FP-strict method can override a non-FP-strict one and vice-versa.

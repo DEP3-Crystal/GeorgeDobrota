@@ -1,0 +1,15 @@
+Covariant return type refers to return type of an overriding method.
+It allows to narrow down return type of an overridden method without any need to cast the type or check the return type.
+Covariant return type works only for non-primitive return types.
+From Java 5 onwards, we can override a method by changing its return type only by abiding the condition that return type is a subclass of that of overridden method return type.
+
+
+Advantages of Covariant Return Type
+Following are the advantages of the covariant return type.
+
+1) Covariant return type assists to stay away from the confusing type casts in the class hierarchy and makes the code more usable, readable, and maintainable.
+
+2) In the method overriding, the covariant return type provides the liberty to have more to the point return types.
+
+3) Covariant return type helps in preventing the run-time ClassCastExceptions on returns.
+
