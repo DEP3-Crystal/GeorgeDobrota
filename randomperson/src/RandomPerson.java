@@ -26,6 +26,9 @@ public class RandomPerson {
                     "\n florin-adrian.dumitru@crystal-system.eu",
                     "\n victor.hincu@crystal-system.eu"));
 
+    //second list in which you add the person who was chosen
+    public static List<String> names2=new ArrayList<>();
+
 
     public static void main(String[] args) {
 
@@ -94,13 +97,29 @@ public class RandomPerson {
     }
 
     //The third step is  if you choose a random person, the program must randomly choose a person from the list .
-    // If you resume this random pick, the previously chosen person should no longer be chosen because was deleted from list.
+    // If you resume this random pick, the previously chosen person should no longer be chosen because was deleted from list and was added into second list
     public static void randomPerson() {
         Random random = new Random();
         int randomNumber;
         randomNumber = random.nextInt(names.size());
         System.out.println(names.get(randomNumber));
+        String name;
+        name=names.get(randomNumber);
+        names2.add(name);
         names.remove(randomNumber);
+        if(names.size()==0)
+        {
+            Random random2 = new Random();
+            int randomNumber2;
+            randomNumber2 = random2.nextInt(names2.size());
+            System.out.println(names2.get(randomNumber2));
+            String name2;
+            name2=names2.get(randomNumber2);
+            names.add(name2);
+            names2.remove(randomNumber2);
+        }
+
+        //System.out.println("List 2: "+names2);
         System.out.println();
         System.out.println();
         System.out.println();
