@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class RandomPerson {
     //all names
@@ -27,7 +28,7 @@ public class RandomPerson {
                     "\n victor.hincu@crystal-system.eu"));
 
     //second list in which you add the person who was chosen
-    public static List<String> names2=new ArrayList<>();
+    public static List<String> names2 = new ArrayList<>();
 
 
     public static void main(String[] args) {
@@ -63,8 +64,7 @@ public class RandomPerson {
         option = scan.nextInt();
         do {
 
-            if (option == 0)
-                break;
+            if (option == 0) break;
             else if (option == 1) {
                 showNames();
                 break;
@@ -104,17 +104,16 @@ public class RandomPerson {
         randomNumber = random.nextInt(names.size());
         System.out.println(names.get(randomNumber));
         String name;
-        name=names.get(randomNumber);
+        name = names.get(randomNumber);
         names2.add(name);
         names.remove(randomNumber);
-        if(names.size()==0)
-        {
+        if (names.size() == 0) {
             Random random2 = new Random();
             int randomNumber2;
             randomNumber2 = random2.nextInt(names2.size());
             System.out.println(names2.get(randomNumber2));
             String name2;
-            name2=names2.get(randomNumber2);
+            name2 = names2.get(randomNumber2);
             names.add(name2);
             names2.remove(randomNumber2);
         }
@@ -130,15 +129,35 @@ public class RandomPerson {
     //still working on this one
     public static void addPerson() {
         Scanner scan = new Scanner(System.in);
-
         System.out.println("The name should be 'user@domain.com'");
         String person = scan.nextLine();
-        names.add(person);
-        System.out.println(names);
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        if(names.contains(person)){
+            System.err.println("This person is already on the list !!! Please try again !!!");
+            addPerson();
+        }else if(validateEmail(person)) {
+            names.add(person);
+            System.out.println(names);
+            System.out.println();
+            System.out.println();
+            System.out.println();
+        }else {
+            System.err.println("Invalid email !!! Please try again !!!!");
+            addPerson();
+        }
         menu();
+    }
+
+    public static boolean validateEmail(String email)
+    {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+                "[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                "A-Z]{2,7}$";
+
+        Pattern pat = Pattern.compile(emailRegex);
+        if (email == null)
+            return false;
+        return pat.matcher(email).matches();
     }
 
     //The final step is if you choose to remove a person, the program checks if there is a name in the list and if there is, it will delete the person
@@ -147,16 +166,15 @@ public class RandomPerson {
         System.out.println("Select one person to remove it:");
         System.out.println(names);
         System.out.println("The name should be 'user@domain.com'");
-        String person = scan.nextLine();
-        names.removeIf(v -> v.equals(person));
-        System.out.println(names);
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        String person;
+        person=scan.nextLine();
+        if(names.contains(person)){
+            names.remove(person);
+            System.out.println(names);
+        }else {
+            System.err.println("This name doesn't exist. Please enter a name that is in the list");
+            removePerson();
+        }
         menu();
     }
 }
-
-
-
-
